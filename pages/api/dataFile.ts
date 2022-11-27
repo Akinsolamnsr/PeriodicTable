@@ -8,12 +8,8 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
   //Read the json data file data.json
   const fileContents = await fs.readFile(jsonDirectory, 'utf8');
   const Contents=JSON.parse(fileContents)
-  const List=Contents.map((v:any)=>{
-    const {number,symbol,name,pictures}=v.General
-       return [number,symbol,name,pictures]
-  })
-//  console.log(List)
+  
   //Return the content of the data file in json format
 
-  res.status(200).json(List);
+  res.status(200).json(Contents);
 }

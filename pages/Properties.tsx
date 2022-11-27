@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
-import DataFile from '../components/Pageone/FilePage'
 import useSWR from 'swr'
-const Home: NextPage = () => {
+import DataTwo from '../components/PageTwo/TwoFile'
+const   Properties: NextPage = () => {
   const { data, error } = useSWR('/api/dataFile',(datum)=>fetch(datum).then((res) => res.json()))
  if(data){
   
   return (
     <div className=' w-screen h-screen overflow-hidden'>
-      <DataFile {...data} />
+      <DataTwo {...data} />
     </div>
   )
  }
@@ -20,4 +20,4 @@ const Home: NextPage = () => {
  }
 }
 
-export default Home
+export default Properties
