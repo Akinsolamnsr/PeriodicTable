@@ -1,3 +1,4 @@
+import Loading from "../Loading"
 import { useAppContext } from "../UseContext"
 
 
@@ -65,8 +66,8 @@ export default function ElemFile(){
    }
    else{
       return(
-        <div>
-            Loading....
+        <div >
+       
         </div>
       )
    }

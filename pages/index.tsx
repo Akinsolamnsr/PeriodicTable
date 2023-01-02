@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import DataFile from '../components/Pageone/FilePage'
 import useSWR from 'swr'
+import Loading from '../components/Loading'
 const Home: NextPage = () => {
   const { data, error } = useSWR('/api/dataFile',(datum)=>fetch(datum).then((res) => res.json()))
  if(data){
@@ -13,9 +14,9 @@ const Home: NextPage = () => {
  }
  else{
   return(
-    <>
-    Loading....
-    </>
+    <div className="w-full h-screen flex justify-center items-center bg-blue-100">
+   <Loading />
+    </div>
   )
  }
 }

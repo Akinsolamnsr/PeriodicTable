@@ -1,10 +1,23 @@
 import { NextPage } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {Arr,Bckup,List,Section,Func} from "../Pageone/constant"
 import { useAppContext } from '../UseContext';
 import BatchTwo from "./BatchTwo"
 import BatchTwoLant from "./BatchTwoLant"
+import Ptb from "../../public/images/ptb.svg"
+import useWindowSize from "../PageTwo/Resize"
+
+ interface windowSize{
+    width?: number
+    height?: number
+  }
+
 const GridTwo:NextPage = () => {
+ 
+  const Windo:windowSize=useWindowSize()
+   const sts=  Windo.width
+   const num =sts?sts:0
+   console.log(num)
   const [Slide,setSlide]=useState(false)
     const context=useAppContext()
     const {state,dispatch}=context
@@ -22,7 +35,7 @@ const GridTwo:NextPage = () => {
 const {array,lant2}=Func()
 
   return(
-    <div className={`${Slide && !status?"":`${state.margin?"":`${status?"":"-ml-[6rem]"}`}`} inline-flex flex-col mt-8 font-bold `}>
+    <div className={`${num<700?"ml-12":""} ${Slide && !status?"":`${state.margin?"":`${status?"":"-ml-[6rem]"}`}`} inline-flex flex-col mt-8 font-bold `}>
       
         <div className={` flex ml-4 ${Slide && !status?"w-[180%] ":"w-full"} mb-2`}>
             <div className='flex flex-wrap'>
@@ -70,7 +83,7 @@ const {array,lant2}=Func()
             
         <div className={` flex ${status?"w-[50rem]":"w-[68rem]"} flex-col items-end`}>
           
-        <div className={`  flex flex-wrap ${status?"h-[29rem]":""}`}>
+        <div className={` flex flex-wrap ${status?"h-[29rem]":""}`}>
         {array.map((x:any,i:any,arr:any)=>{
           
             if(Arr.includes(x[1])){
@@ -100,7 +113,7 @@ const {array,lant2}=Func()
     {lant2.map((x:any)=>{
       
             return(
-          <div className='w-[3.5rem] h-[4rem] ml-1 mt-1 text-center  ' ><BatchTwoLant {...x} /></div>
+          <div className='w-[3.5rem] h-[4rem] ml-1 mt-1 text-center' ><BatchTwoLant {...x} /></div>
             )
         })}
     </div>
@@ -114,5 +127,7 @@ const {array,lant2}=Func()
 }
 
 export default GridTwo
+
+
 
 

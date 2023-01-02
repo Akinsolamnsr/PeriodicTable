@@ -7,6 +7,7 @@ import AfiList from "./LstBatch/AfinityList"
 import CovList from "./LstBatch/covList"
 import VanList from "./LstBatch/Vandal"
 import EmpList from "./LstBatch/EmpriLisit"
+import ElementList from "./LstBatch/Elements"
 const ListPage = () => {
 
     const context=useAppContext()
@@ -18,7 +19,7 @@ const ListPage = () => {
 
        if(state.elemrntProp==="Melting"){
         return(
-            <div className='w-full h-full'>
+            <div className='w-full h-full mt-8'>
              <MeltList {...{data:Arr}} />
             </div>
         )
@@ -26,14 +27,14 @@ const ListPage = () => {
 
        else if(state.elemrntProp==="Boiling"){
         return(
-            <div className='w-full h-full'>
+            <div className='w-full h-full mt-8'>
              <BoilList {...{data:Arr}} />
             </div>
         )
        }
        else if(state.elemrntProp==="Ionization"){
         return(
-            <div className='w-full h-full'>
+            <div className='w-full h-full mt-8'>
             <IonList {...{data:Arr}} />
             </div>
         )
@@ -41,21 +42,21 @@ const ListPage = () => {
 
        else if(state.elemrntProp==="Negativity"){
         return(
-            <div className='w-full h-full'>
+            <div className='w-full h-full mt-8'>
             <NegList {...{data:Arr}} />
             </div>
         )
        }
        else if(state.elemrntProp==="Afinity"){
         return(
-            <div className='w-full h-full'>
+            <div className='w-full h-full mt-8'>
               <AfiList {...{data:Arr}} />
             </div>
         )
        }
        else if(state.elemrntProp==="Covalent"){
         return(
-            <div className='w-full h-full'>
+            <div className='w-full h-full mt-8'>
               <CovList {...{data:Arr}} />
             </div>
         )
@@ -63,23 +64,23 @@ const ListPage = () => {
 
        else if(state.elemrntProp==="Wall"){
         return(
-            <div className='w-full h-full'>
+            <div className='w-full h-full mt-8'>
              <VanList {...{data:Arr}} />
             </div>
         )
        }
        else if(state.elemrntProp==="Emprical"){
         return(
-            <div className='w-full h-full'>
+            <div className='w-full h-full mt-8'>
              <EmpList {...{data:Arr}} />
             </div>
         )
        }
   else{
     return(
-        <div>
-          G
-        </div>
+        <div className='w-full h-full mt-8'>
+        <ElementList {...{data:Arr}} />
+       </div>
     )
   }
          

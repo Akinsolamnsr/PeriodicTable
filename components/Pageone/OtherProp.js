@@ -1,6 +1,7 @@
 
 import { useReducer, useState,useRef} from 'react';
 import useSWR from 'swr'
+import Loading from '../Loading';
 import { useAppContext } from '../UseContext';
 
 
@@ -115,7 +116,8 @@ const reducer=(state,action)=>{
        <div><div><hr className='mt-2' /><span className='mr-4 text-xs'>Energy Level</span><span>{config1}</span></div></div>
        </button>
        
-     <div className={`inline-flex flex-col 
+     <div className='overflow-y-auto'>
+     <div className={` w-full inline-flex flex-col  h-[25rem]
       ${color==="Alkaline metal"?`bg-[#ffcccc] text-[#b30000]`:`
       ${color==="Alkaline earth metal"?`bg-[#cceeff] text-[#00334d]`:`
       ${color==="Metalloid"?`bg-[#ccffff] text-[#003333]`:`
@@ -197,12 +199,13 @@ const reducer=(state,action)=>{
         <div>{allotropes}</div>
     </div>
      </div>
+     </div>
 
       </div>
     )
   }
 else{
-  <div>Loading</div>
+  <div></div>
 }
   
 }

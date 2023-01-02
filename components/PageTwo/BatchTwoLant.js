@@ -7,13 +7,14 @@ import Negativity from "./Element/Negativity"
 import Covalent from "./Element/covalent"
 import Emprical from "./Element/Emprical"
 import Wall from "./Element/Wall"
+import ElementsProp from "./Element/Element"
 
 
 const BatchTwoLant = (prop) => {
     const context=useAppContext()
     const {state}=context
    const {melting,boiling}=prop.Physical
-   const {name,symbol}=prop.General
+   const {name,symbol,number}=prop.General
    const {Ionization,afinity,covalentRadius,negativity,radius,vandalForces}=prop.Reactive
     
 
@@ -79,7 +80,7 @@ const BatchTwoLant = (prop) => {
   else{
     return(
         <div>
-          G
+          <ElementsProp {...{number,symbol}} />
         </div>
     )
   }

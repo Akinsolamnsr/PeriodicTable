@@ -23,7 +23,7 @@ const Isoprop = () => {
   else{
     return(
       <>
-      Loading...
+      
       </>
     )
   }

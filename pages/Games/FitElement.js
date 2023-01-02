@@ -1,5 +1,7 @@
-import NavWrap from "../../components/PageThree/NavWrap";
-
+import NavWrap2 from "../../components/PageThree/NavWrap2";
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider } from 'react-dnd'
+import ElementFit from "../../components/PageThree/Games/ElemFit/ElemFit";
 
 
 
@@ -9,8 +11,10 @@ import NavWrap from "../../components/PageThree/NavWrap";
 export default function FitElement(){
 
     return(
-        <NavWrap>
-        Fit first twenty and All Element in the table
-        </NavWrap>
+        <NavWrap2 >
+            <DndProvider backend={HTML5Backend}>
+              <ElementFit />
+            </DndProvider>
+        </NavWrap2>
         )
 }

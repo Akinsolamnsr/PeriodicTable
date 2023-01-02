@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
 import { useMemo } from 'react';
 import useSWR from 'swr'
-import AppSize from "./Screen"
+import Screen from "./Screen"
 import { useAppContext } from '../UseContext';
-  
+import WrapDiv from "./WrapDiv"  
 const DataFile3:NextPage = (prop) => {
      const context=useAppContext()
      const {dispatch,state}=context
@@ -14,16 +14,16 @@ const DataFile3:NextPage = (prop) => {
        if(Object.keys(state.data).length !== 0){
           
           return(
-               <>
-             <AppSize />
-                 </>
+               <WrapDiv>
+             <Screen />
+               </WrapDiv>
                  )
        }
 
        else{
           return(
                <>
-             Loading...
+         
                  </>
                  )
        }

@@ -14,7 +14,7 @@ const   Properties: NextPage = () => {
  else{
   return(
     <>
-    Loading....
+    
     </>
   )
  }

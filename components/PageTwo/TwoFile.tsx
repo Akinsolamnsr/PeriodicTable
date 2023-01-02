@@ -21,7 +21,7 @@ const DataTwo:NextPage = (prop) => {
        else{
           return(
                <>
-             Loading...
+             
                  </>
                  )
        }

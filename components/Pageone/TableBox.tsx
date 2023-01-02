@@ -4,7 +4,6 @@ import Gridtable from './Grid';
 
   
 const Ptable:NextPage = () => {
-
   return(
     <div className='inline '>
      <Gridtable />
